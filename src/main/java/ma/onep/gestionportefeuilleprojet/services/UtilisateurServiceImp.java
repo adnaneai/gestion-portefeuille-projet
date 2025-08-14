@@ -18,7 +18,6 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 @AllArgsConstructor
-@Slf4j
 public class UtilisateurServiceImp implements UtilisateurService{
     private UtilisateurRepository  utilisateurRepository;
     private UtilisateurMapper utilisateurMapper;
