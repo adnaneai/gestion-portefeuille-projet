@@ -15,90 +15,77 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @CrossOrigin("*")
-public class UtilisateurRestControllerImp implements  UtilisateurRestController {
-    private UtilisateurService utilisateurService;
+@RequestMapping("/api")
+public class UtilisateurRestControllerImp implements UtilisateurRestController {
+    private final UtilisateurService utilisateurService;
 
     @Override
-    @GetMapping("/utilisateurs")
     public List<UtilisateurDTO> findAllUtilisateurs() {
         return utilisateurService.findAll();
     }
 
     @Override
-    @GetMapping("/demandeurs")
     public List<DemandeurDTO> findAllDemandeur() {
         return utilisateurService.findAllDemandeur();
     }
 
     @Override
-    @GetMapping("/responsablepmos")
     public List<ResponsablePMODTO> findAllResponsablePMO() {
         return utilisateurService.findAllResponsablePMO();
     }
 
     @Override
-    @GetMapping("/demandeurs/id/{id}")
-    public DemandeurDTO findDemandeurById(@PathVariable(name = "id") Long id) throws UtilisateurNotFoundException {
+    public DemandeurDTO findDemandeurById(Long id) throws UtilisateurNotFoundException {
         return utilisateurService.findDemandeurById(id);
     }
 
     @Override
-    @GetMapping("/demandeurs/matricule/{idMatricule}")
-    public DemandeurDTO findDemandeurByMatricule(@PathVariable(name = "idMatricule") Long idMatricule) throws DemandeurNotFoundException {
+    public DemandeurDTO findDemandeurByMatricule(Long idMatricule) throws DemandeurNotFoundException {
         return utilisateurService.findDemandeurByMatricule(idMatricule);
     }
 
     @Override
-    @GetMapping("/responsablepmos/id/{id}")
-    public ResponsablePMODTO findResponsablePMOById(@PathVariable(name = "id") Long id) throws ResponsablePMONotFoundException {
+    public ResponsablePMODTO findResponsablePMOById(Long id) throws ResponsablePMONotFoundException {
         return utilisateurService.findResponsablePMOById(id);
     }
 
     @Override
-    @PostMapping("/demandeurs")
-    public DemandeurDTO saveDemandeur(@RequestBody DemandeurDTO demandeurDTO) {
+    public DemandeurDTO saveDemandeur(DemandeurDTO demandeurDTO) {
         return utilisateurService.saveDemandeur(demandeurDTO);
     }
 
     @Override
-    @PostMapping("/responsablepmos")
-    public ResponsablePMODTO saveResponsablePMO(@RequestBody ResponsablePMODTO responsablePMODTO) {
+    public ResponsablePMODTO saveResponsablePMO(ResponsablePMODTO responsablePMODTO) {
         return utilisateurService.saveResponsablePMO(responsablePMODTO);
     }
 
     @Override
-    @PutMapping("/demandeurs/id/{id}")
-    public DemandeurDTO updateDemandeurById(@RequestBody DemandeurDTO demandeurDTO,@PathVariable(name = "id") Long id) throws UtilisateurNotFoundException {
-        return utilisateurService.updateDemandeurById(demandeurDTO,id);
+    public DemandeurDTO updateDemandeurById(DemandeurDTO demandeurDTO, Long id) throws UtilisateurNotFoundException {
+        return utilisateurService.updateDemandeurById(demandeurDTO, id);
     }
 
     @Override
-    @PutMapping("/demandeurs/matricule/{idMatricule}")
-    public DemandeurDTO updateDemandeurByMatricule(@RequestBody DemandeurDTO demandeurDTO,@PathVariable(name = "idMatricule") Long idMatricule) throws DemandeurNotFoundException {
-        return utilisateurService.updateDemandeurByMatricule(demandeurDTO,idMatricule);
+    public DemandeurDTO updateDemandeurByMatricule(DemandeurDTO demandeurDTO, Long idMatricule) throws DemandeurNotFoundException {
+        return utilisateurService.updateDemandeurByMatricule(demandeurDTO, idMatricule);
     }
 
     @Override
-    @PutMapping("/responsablepmos/id/{id}")
-    public ResponsablePMODTO updateResponsablePMO(@RequestBody ResponsablePMODTO responsablePMODTO,@PathVariable(name = "id") Long id) throws ResponsablePMONotFoundException {
-        return utilisateurService.updateResponsablePMOById(responsablePMODTO,id);
+    public ResponsablePMODTO updateResponsablePMO(ResponsablePMODTO responsablePMODTO, Long id) throws ResponsablePMONotFoundException {
+        return utilisateurService.updateResponsablePMOById(responsablePMODTO, id);
     }
 
     @Override
-    @DeleteMapping("/demandeurs/id/{id}")
-    public void deleteDemandeurById(@PathVariable(name = "id") Long id) throws UtilisateurNotFoundException {
+    public void deleteDemandeurById(Long id) throws UtilisateurNotFoundException {
         utilisateurService.deleteDemandeurById(id);
     }
 
     @Override
-    @DeleteMapping("/demandeurs/matricule/{idMatricule}")
-    public void deleteDemandeurByMatricule(@PathVariable(name = "idMatricule") Long idMatricule) throws DemandeurNotFoundException {
+    public void deleteDemandeurByMatricule(Long idMatricule) throws DemandeurNotFoundException {
         utilisateurService.deleteDemandeurByMatricule(idMatricule);
     }
 
     @Override
-    @DeleteMapping("/responsablepmos/id/{id}")
-    public void deleteResponsableById(@PathVariable(name = "id") Long id) throws ResponsablePMONotFoundException {
+    public void deleteResponsableById(Long id) throws ResponsablePMONotFoundException {
         utilisateurService.deleteResponsablePMOById(id);
     }
 }

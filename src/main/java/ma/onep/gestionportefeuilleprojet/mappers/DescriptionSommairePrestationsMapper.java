@@ -1,0 +1,9 @@
+package ma.onep.gestionportefeuilleprojet.mappers;
+
+import ma.onep.gestionportefeuilleprojet.dto.DescriptionSommairePrestationsDTO;
+import ma.onep.gestionportefeuilleprojet.entities.DescriptionSommairePrestations;
+
+public interface DescriptionSommairePrestationsMapper {
+    public DescriptionSommairePrestationsDTO fromDescriptionSommairePrestations(DescriptionSommairePrestations descriptionSommairePrestations);
+    public DescriptionSommairePrestations fromDescriptionSommairePrestationsDTO(DescriptionSommairePrestationsDTO descriptionSommairePrestationsDTO);
+}

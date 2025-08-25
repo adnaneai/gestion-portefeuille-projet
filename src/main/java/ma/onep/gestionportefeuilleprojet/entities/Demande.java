@@ -10,25 +10,42 @@ public class Demande {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDemande;
-    private Statut status;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    private Statut statut;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "identification_projet_id")
     private IdentificationProjet identificationProjet;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "parties_prenantes_id")
     private PartiesPrenantes partiesPrenantes;
-    @OneToOne(mappedBy = "demande",  cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "objectifs_projet_id")
     private ObjectifsProjet objectifsProjet;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "description_sommaire_prestations_id")
     private DescriptionSommairePrestations descriptionSommairePrestations;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "informations_projet_id")
     private InformationsProjet informationsProjet;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "projets_relation_id")
     private ProjetsRelation projetsRelation;
-    @OneToOne(mappedBy = "demande", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "autres_information_id")
     private AutresInformation autresInformation;
+
     @ManyToOne
     @JoinColumn(name = "demandeur_id")
     private Demandeur demandeur;
+
     @ManyToOne
-    @JoinColumn(name = "responsablePMO_id")
+    @JoinColumn(name = "responsable_pmo_id")
     private ResponsablePMO responsablePMO;
 }

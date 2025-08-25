@@ -1,7 +1,5 @@
 package ma.onep.gestionportefeuilleprojet.mappers;
 
-import lombok.Getter;
-import lombok.Setter;
 import ma.onep.gestionportefeuilleprojet.dto.DemandeurDTO;
 import ma.onep.gestionportefeuilleprojet.dto.ResponsablePMODTO;
 import ma.onep.gestionportefeuilleprojet.dto.UtilisateurDTO;

@@ -11,6 +11,8 @@ import java.util.List;
 public class Demandeur extends Utilisateur {
     private Long matricule;
     private String direction;
+
     @OneToMany(mappedBy = "demandeur", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Demande> demandes;
 }
+

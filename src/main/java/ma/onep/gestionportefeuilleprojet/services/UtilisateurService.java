@@ -3,7 +3,6 @@ package ma.onep.gestionportefeuilleprojet.services;
 import ma.onep.gestionportefeuilleprojet.dto.DemandeurDTO;
 import ma.onep.gestionportefeuilleprojet.dto.ResponsablePMODTO;
 import ma.onep.gestionportefeuilleprojet.dto.UtilisateurDTO;
-import ma.onep.gestionportefeuilleprojet.entities.ResponsablePMO;
 import ma.onep.gestionportefeuilleprojet.exceptions.DemandeurNotFoundException;
 import ma.onep.gestionportefeuilleprojet.exceptions.UtilisateurNotFoundException;
 

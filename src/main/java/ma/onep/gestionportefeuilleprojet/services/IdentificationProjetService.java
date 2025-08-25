@@ -1,0 +1,24 @@
+package ma.onep.gestionportefeuilleprojet.services;
+
+import ma.onep.gestionportefeuilleprojet.dto.IdentificationProjetDTO;
+import ma.onep.gestionportefeuilleprojet.exceptions.IdentificationProjetNotFoundException;
+
+import java.util.List;
+
+public interface IdentificationProjetService {
+    public List<IdentificationProjetDTO> findAllIdentificationProjets();
+    public IdentificationProjetDTO findByIdIdentificationProjet(Long idIdentificationProjet) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO findByCodeIdentificationProjet(String codeIdentificationProjet) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO findByIdProjetIdentificationProjet(String idProjetIdentification) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO findByIntituleProjetIdentificationProjet(String intituleIdentificationProjet) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO saveIdentificationProjet(IdentificationProjetDTO identificationProjetDTO) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO updateIdentificationProjetByIdIdentificationProjet(Long idIdentificationProjet,IdentificationProjetDTO identificationProjetDTO) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO updateIdentificationProjetByCode(String codeIdentificationProjet,IdentificationProjetDTO identificationProjetDTO) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO updateIdentificationProjetByIdProjet(String idProjet,IdentificationProjetDTO identificationProjetDTO) throws IdentificationProjetNotFoundException;
+    public IdentificationProjetDTO updateIdentificationProjetByIntituleProjet(String intituleProjet,IdentificationProjetDTO identificationProjetDTO) throws IdentificationProjetNotFoundException;
+    public void deleteIdentificationProjetByIdIdentificationProjet(Long idIdentificationProjet) throws IdentificationProjetNotFoundException;
+    public void deleteIdentificationProjetByCodeIdentificationProjet(String codeIdentificationProjet) throws IdentificationProjetNotFoundException;
+    public void deleteIdentificationProjetByIdProjet(String idProjetIdentification) throws IdentificationProjetNotFoundException;
+    public void deleteIdentificationProjetByIntituleProjet(String intituleIdentificationProjet) throws IdentificationProjetNotFoundException;
+
+}

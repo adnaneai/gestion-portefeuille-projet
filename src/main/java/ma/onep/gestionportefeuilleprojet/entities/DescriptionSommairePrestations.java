@@ -4,13 +4,15 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Getter @Setter @ToString @AllArgsConstructor @NoArgsConstructor @Builder
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class DescriptionSommairePrestations {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idDescriptionSommairePrestations;
-    private String description;
-    @OneToOne
-    @JoinColumn(name = "descriptionSommairePrestations")
+
+    private String nomDescriptionSommairePrestations;
+
+    @OneToOne(mappedBy = "descriptionSommairePrestations")
     private Demande demande;
 }

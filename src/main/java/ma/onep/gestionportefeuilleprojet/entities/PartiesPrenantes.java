@@ -2,21 +2,23 @@ package ma.onep.gestionportefeuilleprojet.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.List;
 
 @Entity
-@Getter @Setter @ToString @NoArgsConstructor @AllArgsConstructor @Builder
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 public class PartiesPrenantes {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idPartiesPrenantes;
+
     private String moa;
     private String moe;
     private String amo;
-    private String beneficitaire;
-    private List<String> autres;
-    @OneToOne
-    @JoinColumn(name = "partiesPreantes")
+    @OneToMany(mappedBy = "partiesPrenantes", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Beneficitaire> beneficitaires;
+    @OneToMany(mappedBy = "partiesPrenantes",cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Autre> autres;
+    @OneToOne(mappedBy = "partiesPrenantes")
     private Demande demande;
 }

@@ -1,0 +1,14 @@
+package ma.onep.gestionportefeuilleprojet.services;
+
+import ma.onep.gestionportefeuilleprojet.dto.DescriptionSommairePrestationsDTO;
+import ma.onep.gestionportefeuilleprojet.exceptions.DescriptionSommairePrestationsNotFoundException;
+
+import java.util.List;
+
+public interface DescriptionSommairePrestationsService {
+    public List<DescriptionSommairePrestationsDTO> findAllDescriptionSommairePrestations();
+    public DescriptionSommairePrestationsDTO  findDescriptionSommairePrestationsById(Long id) throws DescriptionSommairePrestationsNotFoundException;
+    public DescriptionSommairePrestationsDTO saveDescriptionSommairePrestations(DescriptionSommairePrestationsDTO dto);
+    public DescriptionSommairePrestationsDTO updateDescriptionSommairePrestations(Long id, DescriptionSommairePrestationsDTO descriptionSommairePrestationsDTO) throws DescriptionSommairePrestationsNotFoundException;
+    public void deleteDescriptionSommairePrestations(Long id) throws DescriptionSommairePrestationsNotFoundException;
+}

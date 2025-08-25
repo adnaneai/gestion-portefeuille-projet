@@ -2,16 +2,20 @@ package ma.onep.gestionportefeuilleprojet.dto;
 
 import lombok.Getter;
 import lombok.Setter;
-import ma.onep.gestionportefeuilleprojet.entities.*;
+import ma.onep.gestionportefeuilleprojet.enums.Statut;
 
 @Getter @Setter
 public class DemandeDTO {
     private Long idDemande;
-    private IdentificationProjet identificationProjet;
-    private PartiesPrenantes partiesPrenantes;
-    private ObjectifsProjet objectifsProjet;
-    private DescriptionSommairePrestations descriptionSommairePrestations;
-    private InformationsProjet informationsProjet;
-    private ProjetsRelation projetsRelation;
-    private AutresInformation autresInformation;
+    private Statut statut;
+    private IdentificationProjetDTO identificationProjetDTO;
+    private PartiesPrenantesDTO partiesPrenantesDTO;
+    private ObjectifsProjetDTO objectifsProjetDTO;
+    private DescriptionSommairePrestationsDTO descriptionSommairePrestationsDTO;
+    private InformationsProjetDTO informationsProjetDTO;
+    private ProjetsRelationDTO projetsRelationDTO;
+    private AutresInformationDTO autresInformationDTO;
+    private DemandeurDTO demandeur;
+    private ResponsablePMODTO responsablePMO;
+
 }
