@@ -9,14 +9,14 @@ import org.springframework.stereotype.Service;
 public class AutresInformationMapperImp implements AutresInformationMapper {
 
     @Override
-    public AutresInformationDTO fromAutreInformation(AutresInformation autresInformation) {
+    public AutresInformationDTO fromAutresInformation(AutresInformation autresInformation) {
         AutresInformationDTO autresInformationDTO = new AutresInformationDTO();
         BeanUtils.copyProperties(autresInformation, autresInformationDTO);
         return autresInformationDTO;
     }
 
     @Override
-    public AutresInformation fromAutreInformationDTO(AutresInformationDTO autresInformationDTO) {
+    public AutresInformation fromAutresInformationDTO(AutresInformationDTO autresInformationDTO) {
         AutresInformation autresInformation = new AutresInformation();
         BeanUtils.copyProperties(autresInformationDTO, autresInformation);
         return autresInformation;

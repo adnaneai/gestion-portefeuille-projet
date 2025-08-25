@@ -194,7 +194,7 @@ public class DemandeServiceImp implements  DemandeService {
 
             if(existingAutresInfo == null) {
                 // Créer une nouvelle AutresInformation avec les documents
-                AutresInformation newAutresInfo = autresInformationMapper.fromAutreInformationDTO(newAutresInfoDTO);
+                AutresInformation newAutresInfo = autresInformationMapper.fromAutresInformationDTO(newAutresInfoDTO);
                 if(newAutresInfoDTO.getDocumentDTOS() != null) {
                     List<Document> newDocuments = newAutresInfoDTO.getDocumentDTOS().stream()
                             .map(documentMapper::fromDocumentDTO)
